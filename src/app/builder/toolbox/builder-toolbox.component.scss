@@ -1,0 +1,51 @@
+.builder-toolbox-container {
+    border: solid 3px lightgrey;
+    border-radius: 5px;
+    font-size: 1.2rem;
+
+    header {
+        background-color: lightgrey;
+        font-size: 1.7rem;
+        font-weight: 500;
+        padding: 20px;
+        text-transform: uppercase;
+    }
+
+    section {
+        width: 100%;
+
+        .input-container {
+            cursor: grab;
+
+            .input {
+                margin-left: 15px;
+                padding: 15px 0;
+
+                i {
+                    vertical-align: bottom;
+                }
+
+                .display {
+                    font-weight: 500;
+                    padding: 5px;
+                    vertical-align: middel;
+                    vertical-align: -webkit-baseline-middle;
+                }
+            }
+
+            hr {
+                border: solid 2px lightgrey;
+                cursor: default;
+                margin: 0;
+            }
+        }
+
+        .input-container:hover {
+            background-color: lightyellow;
+        }
+
+        .input-container:active {
+            background-color: lightyellow;
+        }
+    }
+}

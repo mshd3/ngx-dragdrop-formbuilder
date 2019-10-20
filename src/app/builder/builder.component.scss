@@ -1,0 +1,16 @@
+.builder-container {
+    padding: 5px;
+
+    .panel {
+        display: inline-block;
+        margin: 5px;
+        min-width: 325px;
+        vertical-align: top;
+        width: 20%;
+    }
+
+    .panel.designer {
+        min-width: 500px;
+        width: 55%;
+    }
+}

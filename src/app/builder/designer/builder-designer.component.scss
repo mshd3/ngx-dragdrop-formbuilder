@@ -1,0 +1,56 @@
+.builder-designer-container {
+    border: solid 3px lightgrey;
+    border-radius: 5px;
+    font-size: 1.2rem;
+
+    header {
+        background-color: lightgrey;
+        font-size: 1.7rem;
+        font-weight: 500;
+        padding: 20px;
+        text-transform: uppercase;
+    }
+
+    section {
+        min-height: 361px;
+        width: 100%;
+
+        .drag-drop-here {
+            border: dashed 3px lightgrey;
+            border-radius: 5px;
+            color: lightgrey;
+            margin: 15px;
+            padding: 139px 0;
+            text-align: center;
+
+            i {
+                font-size: 2.2rem;
+            }
+        }
+
+        .element {
+            align-items: baseline;
+            display: flex;
+            margin: 15px;
+
+            i {
+                color: lightgrey;
+                cursor: pointer;
+                font-size: 2rem;
+                margin-left: auto;
+            }
+
+            i:hover {
+                color: grey;
+            }
+
+            i:active {
+                color: initial;
+            }
+        }
+
+        .element.selected {
+            background-color: lightyellow;
+        }
+    }
+}
