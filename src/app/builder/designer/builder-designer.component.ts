@@ -17,7 +17,9 @@ import { ElementCheckbox } from '../models/element-checkbox.model';
                 </span>
             </div>
 
-            <div *ngFor="let element of elements; let i = index" [ngSwitch]="element.inputType" [ngClass]="{'selected':element==selectedElement}" class="element" (click)="clickElement(element)">
+            <div *ngFor="let element of elements; let i = index" [ngSwitch]="element.inputType" 
+                [ngClass]="{'selected':element.id === selectedElement.id}" class="element" (click)="clickElement(element)">
+                
                 <builder-element-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-element-checkbox>
                 <i class="material-icons" (click)="clickRemove(i)">cancel</i>
             </div>
@@ -62,11 +64,18 @@ export class BuilderDesignerComponent {
         
         switch (inputType) {
             case InputType.checkbox:
-                element = new ElementCheckbox(InputType.checkbox, 'New checkbox');
+                element = new ElementCheckbox(this.createGuid(), InputType.checkbox, 'New checkbox');
                 break;
         }
 
         return element;
+    }
+
+    private createGuid(): string {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     }
 
     private setSelectedElement(element: ElementInterface): void {

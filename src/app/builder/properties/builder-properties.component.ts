@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from "@angular/core";
 import { ElementInterface } from '../models/element.interface';
 import { InputType } from '../models/input-type.model';
 
@@ -11,8 +11,6 @@ import { InputType } from '../models/input-type.model';
         <section>
             <div *ngIf="element" [ngSwitch]="element.inputType">
                 <builder-properties-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-properties-checkbox>
-
-                <button type="button" class="apply">Apply</button>
             </div>
         </section>
     </div>

@@ -5,5 +5,5 @@ export class ElementCheckbox implements ElementInterface {
     defaultValue: boolean;
     required: boolean;
 
-    constructor(public inputType: InputType, public label: string) {}
+    constructor(public id: string, public inputType: InputType, public label: string) {}
 }

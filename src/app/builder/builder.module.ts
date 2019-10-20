@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { BuilderComponent } from './builder.component';
 import { BuilderDesignerComponent } from './designer/builder-designer.component';
 import { BuilderToolboxComponent } from './toolbox/builder-toolbox.component';
@@ -17,7 +18,8 @@ import { BuilderPropertiesCheckboxComponent } from './properties/builder-propert
     BuilderPropertiesCheckboxComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [BuilderComponent],
   providers: [],

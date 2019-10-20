@@ -18,18 +18,19 @@
             cursor: grab;
 
             .input {
+                align-items: center;
+                display: flex;
                 margin-left: 15px;
                 padding: 15px 0;
 
-                i {
-                    vertical-align: bottom;
+                i.drag {
+                    color: lightgrey;
+                    margin-left: auto;
                 }
 
                 .display {
                     font-weight: 500;
                     padding: 5px;
-                    vertical-align: middel;
-                    vertical-align: -webkit-baseline-middle;
                 }
             }
 

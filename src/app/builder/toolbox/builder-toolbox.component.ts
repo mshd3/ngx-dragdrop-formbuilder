@@ -13,6 +13,7 @@ import { Input } from '../models/input.model';
                 <div class="input">
                     <i class="material-icons">{{input.icon}}</i>
                     <span class="display">{{input.display}}</span>
+                    <i class="material-icons drag">drag_indicator</i>
                 </div>
                 <hr *ngIf="i < inputs.length - 1">
             </div>

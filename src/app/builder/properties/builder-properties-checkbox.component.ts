@@ -11,19 +11,19 @@ import { ElementCheckbox } from '../models/element-checkbox.model';
     <div class="builder-properties-container">
         <div class="property">
             <label>Label</label>
-            <input type="text" [value]="element.label">
+            <input type="text" [(ngModel)]="element.label">
         </div>
 
         <div class="property">
             <label class="checkbox-container">Required
-                <input type="checkbox">
+                <input type="checkbox" [(ngModel)]="element.required">
                 <span class="checkmark"></span>
             </label>
         </div>
 
         <div class="property">
             <label class="checkbox-container">Checked by default
-                <input type="checkbox">
+                <input type="checkbox" [(ngModel)]="element.defaultValue">
                 <span class="checkmark"></span>
             </label>
         </div>
