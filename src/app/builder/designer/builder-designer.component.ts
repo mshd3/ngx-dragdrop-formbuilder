@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from "@angular/core";
 import { InputType } from '../models/input-type.model';
 import { ElementInterface } from '../models/element.interface';
 import { ElementCheckbox } from '../models/element-checkbox.model';
+import { ElementText } from '../models/element-text.model';
 
 @Component({
     selector: 'builder-designer',
@@ -21,6 +22,11 @@ import { ElementCheckbox } from '../models/element-checkbox.model';
                 [ngClass]="{'selected':element.id === selectedElement.id}" class="element" (click)="clickElement(element)">
                 
                 <builder-element-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-element-checkbox>
+                <builder-element-dropdown *ngSwitchCase="inputType.dropdown" [element]="element"></builder-element-dropdown>
+                <builder-element-radio *ngSwitchCase="inputType.radio" [element]="element"></builder-element-radio>
+                <builder-element-text *ngSwitchCase="inputType.text" [element]="element"></builder-element-text>
+                <builder-element-toggle *ngSwitchCase="inputType.toggle" [element]="element"></builder-element-toggle>
+
                 <i class="material-icons" (click)="clickRemove(i)">cancel</i>
             </div>
         </section>
@@ -65,6 +71,18 @@ export class BuilderDesignerComponent {
         switch (inputType) {
             case InputType.checkbox:
                 element = new ElementCheckbox(this.createGuid(), InputType.checkbox, 'New checkbox');
+                break;
+            case InputType.dropdown:
+                element = new ElementText(this.createGuid(), InputType.dropdown, 'New dropdown');
+                break;
+            case InputType.radio:
+                element = new ElementText(this.createGuid(), InputType.radio, 'New radio');
+                break;
+            case InputType.text:
+                element = new ElementText(this.createGuid(), InputType.text, 'New textbox');
+                break;
+            case InputType.toggle:
+                element = new ElementText(this.createGuid(), InputType.toggle, 'New toggle');
                 break;
         }
 
