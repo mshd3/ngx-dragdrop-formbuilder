@@ -9,7 +9,7 @@ import { ElementDropdown } from '../models/element-dropdown.model';
     <div class="builder-element-dropdown-container">
         <label>{{element.label}}</label>
         <select>
-            <option *ngFor="let option of element.options" [value]="option[1]">{{element[0]}}</option>
+            <option *ngFor="let option of element.options" [value]="option">{{option}}</option>
         </select>
         <span *ngIf="element.required" class="required">*</span>
     </div>

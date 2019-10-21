@@ -6,8 +6,11 @@ import { ElementRadio } from '../models/element-radio.model';
     styleUrls: ['../common/builder-common.scss'],
     template: `
     <div class="builder-element-radio-container">
-        <label *ngIf="!element.options || !element.options.length">No radio options set</label>
-        <input *ngFor="let option of options" type="radio" [name]="element.id" [value]="option[1]">{{option ? option[0] : null}}
+        <label>{{element.label}}</label>
+        <label *ngIf="!element.options || !element.options.length">(no radio options set)</label>
+        <span *ngFor="let option of element.options">
+            <input type="radio" [name]="element.id" [value]="option">{{option}}
+        </span>
         <span *ngIf="element.required" class="required">*</span>
     </div>
     `

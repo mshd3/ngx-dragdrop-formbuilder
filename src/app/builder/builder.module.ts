@@ -11,19 +11,31 @@ import { BuilderElementTextComponent } from './elements/builder-element-text.com
 import { BuilderElementToggleComponent } from './elements/builder-element-toggle.component';
 import { BuilderElementDropdownComponent } from './elements/builder-element-dropdown.component';
 import { BuilderElementRadioComponent } from './elements/builder-element-radio.component';
+import { BuilderElementDateComponent } from './elements/builder-element-date.component';
+import { BuilderPropertiesDateComponent } from './properties/builder-properties-date.component';
+import { BuilderPropertiesTextComponent } from './properties/builder-properties-text.component';
+import { BuilderPropertiesToggleComponent } from './properties/builder-properties-toggle.component';
+import { BuilderPropertiesDropdownComponent } from './properties/builder-properties-dropdown.component';
+import { BuilderPropertiesRadioComponent } from './properties/builder-properties-radio.component';
 
 @NgModule({
   declarations: [
     BuilderComponent,
     BuilderDesignerComponent,
     BuilderElementCheckboxComponent,
+    BuilderElementDateComponent,
     BuilderElementDropdownComponent,
     BuilderElementRadioComponent,
     BuilderElementTextComponent,
     BuilderElementToggleComponent,
     BuilderPropertiesComponent,
     BuilderToolboxComponent,
-    BuilderPropertiesCheckboxComponent
+    BuilderPropertiesCheckboxComponent,
+    BuilderPropertiesDateComponent,
+    BuilderPropertiesDropdownComponent,
+    BuilderPropertiesRadioComponent,
+    BuilderPropertiesTextComponent,
+    BuilderPropertiesToggleComponent
   ],
   imports: [
     CommonModule,

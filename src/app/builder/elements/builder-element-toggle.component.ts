@@ -7,10 +7,11 @@ import { ElementToggle } from '../models/element-toggle.model';
     template: `
     <div class="builder-element-toggle-container">
         <label class="toggle-container">
-            <input type="checkbox">
+            <input type="checkbox" [checked]="element.defaultValue">
             <span class="slider round"></span>
         </label>
         {{element.label}}
+        <span *ngIf="element.required" class="required">*</span>
     </div>
     `
 })

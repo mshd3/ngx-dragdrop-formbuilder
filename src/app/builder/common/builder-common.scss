@@ -10,12 +10,21 @@ label {
 input[type=text] {
     font-size: inherit;
     height: 40px;
+    margin-right: 10px;
+}
+
+input[type=date] {
+    font-size: inherit;
+    height: 40px;
+    margin-right: 10px;
 }
 
 /* Select */
 select {
+    font-size: inherit;
     height: 40px;
-    width: 200px;
+    margin-right: 10px;
+    width: 300px;
 }
 
 /* Checkbox */
@@ -134,3 +143,6 @@ select {
         border-radius: 50%;
     }
 }
+
+/* Radio */
+

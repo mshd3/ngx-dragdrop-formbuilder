@@ -3,6 +3,10 @@ import { InputType } from '../models/input-type.model';
 import { ElementInterface } from '../models/element.interface';
 import { ElementCheckbox } from '../models/element-checkbox.model';
 import { ElementText } from '../models/element-text.model';
+import { ElementDate } from '../models/element-date.model';
+import { ElementDropdown } from '../models/element-dropdown.model';
+import { ElementRadio } from '../models/element-radio.model';
+import { ElementToggle } from '../models/element-toggle.model';
 
 @Component({
     selector: 'builder-designer',
@@ -22,6 +26,7 @@ import { ElementText } from '../models/element-text.model';
                 [ngClass]="{'selected':element.id === selectedElement.id}" class="element" (click)="clickElement(element)">
                 
                 <builder-element-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-element-checkbox>
+                <builder-element-date *ngSwitchCase="inputType.date" [element]="element"></builder-element-date>
                 <builder-element-dropdown *ngSwitchCase="inputType.dropdown" [element]="element"></builder-element-dropdown>
                 <builder-element-radio *ngSwitchCase="inputType.radio" [element]="element"></builder-element-radio>
                 <builder-element-text *ngSwitchCase="inputType.text" [element]="element"></builder-element-text>
@@ -72,17 +77,20 @@ export class BuilderDesignerComponent {
             case InputType.checkbox:
                 element = new ElementCheckbox(this.createGuid(), InputType.checkbox, 'New checkbox');
                 break;
+            case InputType.date:
+                element = new ElementDate(this.createGuid(), InputType.date, 'New date');
+                break;
             case InputType.dropdown:
-                element = new ElementText(this.createGuid(), InputType.dropdown, 'New dropdown');
+                element = new ElementDropdown(this.createGuid(), InputType.dropdown, 'New dropdown');
                 break;
             case InputType.radio:
-                element = new ElementText(this.createGuid(), InputType.radio, 'New radio');
+                element = new ElementRadio(this.createGuid(), InputType.radio, 'New radio');
                 break;
             case InputType.text:
                 element = new ElementText(this.createGuid(), InputType.text, 'New textbox');
                 break;
             case InputType.toggle:
-                element = new ElementText(this.createGuid(), InputType.toggle, 'New toggle');
+                element = new ElementToggle(this.createGuid(), InputType.toggle, 'New toggle');
                 break;
         }
 

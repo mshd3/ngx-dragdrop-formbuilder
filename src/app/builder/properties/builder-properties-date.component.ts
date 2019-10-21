@@ -1,8 +1,8 @@
 import { Component, Input } from "@angular/core";
-import { ElementCheckbox } from '../models/element-checkbox.model';
+import { ElementDate } from '../models/element-date.model';
 
 @Component({
-    selector: 'builder-properties-checkbox',
+    selector: 'builder-properties-date',
     styleUrls: [
         '../common/builder-common.scss', 
         'builder-properties-common.scss'
@@ -15,14 +15,19 @@ import { ElementCheckbox } from '../models/element-checkbox.model';
         </div>
 
         <div class="property">
-            <label class="checkbox-container">Checked by default
-                <input type="checkbox" [(ngModel)]="element.defaultValue">
+            <label class="checkbox-container">Required
+                <input type="checkbox" [(ngModel)]="element.required">
                 <span class="checkmark"></span>
             </label>
+        </div>
+
+        <div class="property">
+            <label>Default date</label>
+            <input type="date" [(ngModel)]="element.defaultValue">
         </div>
     </div>
     `
 })
-export class BuilderPropertiesCheckboxComponent {
-    @Input() element: ElementCheckbox;
+export class BuilderPropertiesDateComponent {
+    @Input() element: ElementDate;
 }

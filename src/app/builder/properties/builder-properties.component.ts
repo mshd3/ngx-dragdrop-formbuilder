@@ -11,6 +11,11 @@ import { InputType } from '../models/input-type.model';
         <section>
             <div *ngIf="element" [ngSwitch]="element.inputType">
                 <builder-properties-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-properties-checkbox>
+                <builder-properties-date *ngSwitchCase="inputType.date" [element]="element"></builder-properties-date>
+                <builder-properties-dropdown *ngSwitchCase="inputType.dropdown" [element]="element"></builder-properties-dropdown>
+                <builder-properties-radio *ngSwitchCase="inputType.radio" [element]="element"></builder-properties-radio>
+                <builder-properties-text *ngSwitchCase="inputType.text" [element]="element"></builder-properties-text>
+                <builder-properties-toggle *ngSwitchCase="inputType.toggle" [element]="element"></builder-properties-toggle>
             </div>
         </section>
     </div>

@@ -30,8 +30,12 @@
 
         .element {
             align-items: baseline;
+            cursor: pointer;
             display: flex;
-            margin: 15px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            margin-left: 15px;
+            margin-right: 15px;
 
             i {
                 color: lightgrey;
