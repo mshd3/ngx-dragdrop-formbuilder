@@ -5,14 +5,13 @@ import { ElementRadio } from '../models/element-radio.model';
     selector: 'builder-element-radio',
     styleUrls: ['../common/builder-common.scss'],
     template: `
-    <div class="builder-element-radio-container">
-        <label>{{element.label}}</label>
-        <label *ngIf="!element.options || !element.options.length">(no radio options set)</label>
-        <span *ngFor="let option of element.options">
-            <input type="radio" [name]="element.id" [value]="option">{{option}}
-        </span>
+        <label id="example-radio-group-label">{{element.label}}</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" color="primary">
+            <mat-radio-button class="example-radio-button" *ngFor="let option of element.options" [value]="option">
+                {{option}}
+            </mat-radio-button>
+        </mat-radio-group>
         <span *ngIf="element.required" class="required">*</span>
-    </div>
     `
 })
 export class BuilderElementRadioComponent {

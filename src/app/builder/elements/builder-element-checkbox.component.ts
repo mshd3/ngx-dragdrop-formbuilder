@@ -5,13 +5,8 @@ import { ElementCheckbox } from '../models/element-checkbox.model';
     selector: 'builder-element-checkbox',
     styleUrls: ['../common/builder-common.scss'],
     template: `
-    <div class="builder-element-checkbox-container">
-        <label class="checkbox-container">{{element.label}}
-            <input type="checkbox" [checked]="element.defaultValue">
-            <span class="checkmark"></span>
-            <span *ngIf="element.required" class="required">*</span>
-        </label>
-    </div>
+        <mat-checkbox color="primary" [ngModel]="element.defaultValue">{{element.label}}</mat-checkbox>
+        <span *ngIf="element.required" class="required">*</span>
     `
 })
 export class BuilderElementCheckboxComponent {

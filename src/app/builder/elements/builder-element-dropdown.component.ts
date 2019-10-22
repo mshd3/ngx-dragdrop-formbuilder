@@ -6,13 +6,15 @@ import { ElementDropdown } from '../models/element-dropdown.model';
     selector: 'builder-element-dropdown',
     styleUrls: ['../common/builder-common.scss'],
     template: `
-    <div class="builder-element-dropdown-container">
-        <label>{{element.label}}</label>
-        <select>
-            <option *ngFor="let option of element.options" [value]="option">{{option}}</option>
-        </select>
+        <mat-form-field>
+            <mat-label>{{element.label}}</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let option of element.options" [value]="option">
+                {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
         <span *ngIf="element.required" class="required">*</span>
-    </div>
     `
 })
 export class BuilderElementDropdownComponent {

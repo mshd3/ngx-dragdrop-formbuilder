@@ -5,14 +5,9 @@ import { ElementToggle } from '../models/element-toggle.model';
     selector: 'builder-element-toggle',
     styleUrls: ['../common/builder-common.scss'],
     template: `
-    <div class="builder-element-toggle-container">
-        <label class="toggle-container">
-            <input type="checkbox" [checked]="element.defaultValue">
-            <span class="slider round"></span>
-        </label>
-        {{element.label}}
-        <span *ngIf="element.required" class="required">*</span>
-    </div>
+        <mat-slide-toggle class="example-margin" color="primary" [checked]="element.defaultValue">
+            {{element.label}}
+        </mat-slide-toggle>
     `
 })
 export class BuilderElementToggleComponent {

@@ -13,9 +13,9 @@ import { ElementToggle } from '../models/element-toggle.model';
     styleUrls: ['builder-designer.component.scss'],
     template: `
     <div class="builder-designer-container">
-        <mat-card>
+        <mat-card (drop)="drop($event)" (dragover)="allowDrop($event)">
             <mat-card-title>Designer</mat-card-title>
-            <mat-card-content (drop)="drop($event)" (dragover)="allowDrop($event)">
+            <mat-card-content>
                 <div *ngIf="elements.length === 0" class="drag-drop-here">
                     <i class="material-icons">save_alt</i>Drag and Drop Elements Here
                 </div>
@@ -30,7 +30,7 @@ import { ElementToggle } from '../models/element-toggle.model';
                     <builder-element-text *ngSwitchCase="inputType.text" [element]="element"></builder-element-text>
                     <builder-element-toggle *ngSwitchCase="inputType.toggle" [element]="element"></builder-element-toggle>
 
-                    <i class="material-icons" (click)="clickRemove(i)">cancel</i>
+                    <i class="material-icons remove" (click)="clickRemove(i)">cancel</i>
                 </div>
             </mat-card-content>
         </mat-card>

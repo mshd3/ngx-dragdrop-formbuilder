@@ -5,11 +5,12 @@ import { ElementDate } from '../models/element-date.model';
     selector: 'builder-element-date',
     styleUrls: ['../common/builder-common.scss'],
     template: `
-    <div class="builder-element-date-container">
-        <label>{{element.label}}</label>
-        <input type="date" [value]="element.defaultValue">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="{{element.label}}" [ngModel]="element.defaultValue">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
         <span *ngIf="element.required" class="required">*</span>
-    </div>
     `
 })
 export class BuilderElementDateComponent {

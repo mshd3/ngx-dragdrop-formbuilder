@@ -5,13 +5,17 @@ import { ElementText } from '../models/element-text.model';
     selector: 'builder-element-text',
     styleUrls: ['../common/builder-common.scss'],
     template: `
-    <div class="builder-element-text-container">
-        <label>{{element.label}}</label>
-        <input type="text">
+        <mat-form-field class="example-form-field">
+            <input matInput type="text" placeholder="{{element.label}}" [(ngModel)]="value">
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
         <span *ngIf="element.required" class="required">*</span>
-    </div>
     `
 })
 export class BuilderElementTextComponent {
     @Input() element: ElementText;
+
+    value: string;
 }

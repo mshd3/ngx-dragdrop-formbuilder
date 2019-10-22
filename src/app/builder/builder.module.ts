@@ -20,8 +20,17 @@ import { BuilderPropertiesToggleComponent } from './properties/builder-propertie
 import { BuilderPropertiesDropdownComponent } from './properties/builder-properties-dropdown.component';
 import { BuilderPropertiesRadioComponent } from './properties/builder-properties-radio.component';
 
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -45,8 +54,17 @@ import { MatChipsModule } from '@angular/material/chips';
   imports: [
     CommonModule,
     FormsModule,
+    MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatChipsModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatInputModule,
+    MatNativeDateModule ,
+    MatRadioModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     NoopAnimationsModule
   ],
   exports: [BuilderComponent],
