@@ -13,28 +13,27 @@ import { ElementToggle } from '../models/element-toggle.model';
     styleUrls: ['builder-designer.component.scss'],
     template: `
     <div class="builder-designer-container">
-        <header>Designer</header>
-        <section (drop)="drop($event)" (dragover)="allowDrop($event)">
-            <div *ngIf="elements.length === 0" class="drag-drop-here">
-                <span>
-                    Drop Toolbox Elements Here<br>
-                    <i class="material-icons">save_alt</i>
-                </span>
-            </div>
+        <mat-card>
+            <mat-card-title>Designer</mat-card-title>
+            <mat-card-content (drop)="drop($event)" (dragover)="allowDrop($event)">
+                <div *ngIf="elements.length === 0" class="drag-drop-here">
+                    <i class="material-icons">save_alt</i>Drag and Drop Elements Here
+                </div>
 
-            <div *ngFor="let element of elements; let i = index" [ngSwitch]="element.inputType" 
-                [ngClass]="{'selected':element.id === selectedElement.id}" class="element" (click)="clickElement(element)">
-                
-                <builder-element-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-element-checkbox>
-                <builder-element-date *ngSwitchCase="inputType.date" [element]="element"></builder-element-date>
-                <builder-element-dropdown *ngSwitchCase="inputType.dropdown" [element]="element"></builder-element-dropdown>
-                <builder-element-radio *ngSwitchCase="inputType.radio" [element]="element"></builder-element-radio>
-                <builder-element-text *ngSwitchCase="inputType.text" [element]="element"></builder-element-text>
-                <builder-element-toggle *ngSwitchCase="inputType.toggle" [element]="element"></builder-element-toggle>
+                <div *ngFor="let element of elements; let i = index" [ngSwitch]="element.inputType" 
+                    [ngClass]="{'selected':element.id === selectedElement.id}" class="element" (click)="clickElement(element)">
+                    
+                    <builder-element-checkbox *ngSwitchCase="inputType.checkbox" [element]="element"></builder-element-checkbox>
+                    <builder-element-date *ngSwitchCase="inputType.date" [element]="element"></builder-element-date>
+                    <builder-element-dropdown *ngSwitchCase="inputType.dropdown" [element]="element"></builder-element-dropdown>
+                    <builder-element-radio *ngSwitchCase="inputType.radio" [element]="element"></builder-element-radio>
+                    <builder-element-text *ngSwitchCase="inputType.text" [element]="element"></builder-element-text>
+                    <builder-element-toggle *ngSwitchCase="inputType.toggle" [element]="element"></builder-element-toggle>
 
-                <i class="material-icons" (click)="clickRemove(i)">cancel</i>
-            </div>
-        </section>
+                    <i class="material-icons" (click)="clickRemove(i)">cancel</i>
+                </div>
+            </mat-card-content>
+        </mat-card>
     </div>
     `
 })

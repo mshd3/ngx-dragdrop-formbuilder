@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   styleUrls: ['./app.component.scss'],
   template: `
-    <h2>Angular Form Builder</h2>
-    <builder></builder>
+  <builder></builder>
   `
 })
 export class AppComponent {

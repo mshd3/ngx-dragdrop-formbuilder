@@ -7,17 +7,17 @@ import { Input } from '../models/input.model';
     styleUrls: ['builder-toolbox.component.scss'],
     template: `
     <div class="builder-toolbox-container">
-        <header>Toolbox</header>
-        <section>
-            <div *ngFor="let input of inputs; let i = index" class="input-container" draggable="true" (dragstart)="drag($event, input)">
-                <div class="input">
-                    <i class="material-icons">{{input.icon}}</i>
-                    <span class="display">{{input.display}}</span>
-                    <i class="material-icons drag">drag_indicator</i>
-                </div>
-                <hr *ngIf="i < inputs.length - 1">
-            </div>
-        </section>
+        <mat-card>
+            <mat-card-title>Element Toolbox</mat-card-title>
+            <mat-card-content>
+                <mat-chip-list *ngFor="let input of inputs" class="mat-chip-list-stacked" aria-orientation="vertical">
+                    <mat-chip color="primary" selected draggable="true" (dragstart)="drag($event, input)">
+                        <i class="material-icons">{{input.icon}}</i>
+                        {{input.display}}
+                    </mat-chip>
+                </mat-chip-list>
+            </mat-card-content>
+        </mat-card>
     </div>
     `
 })
@@ -25,7 +25,7 @@ export class BuilderToolboxComponent {
     inputs: Array<Input> = [
         new Input('Checkbox', 'check_box', InputType.checkbox),
         new Input('Date', 'calendar_today', InputType.date),
-        new Input('Dropdown', 'check_box', InputType.dropdown),
+        new Input('Dropdown', 'keyboard_arrow_down', InputType.dropdown),
         new Input('Radio', 'radio_button_checked', InputType.radio),
         new Input('Text', 'text_format', InputType.text),
         new Input('Toggle', 'toggle_on', InputType.toggle),

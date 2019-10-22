@@ -9,7 +9,8 @@ import { BuilderModule } from './builder/builder.module';
   ],
   imports: [
     BrowserModule,
-    BuilderModule],
+    BuilderModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

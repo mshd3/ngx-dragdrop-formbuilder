@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { BuilderComponent } from './builder.component';
 import { BuilderDesignerComponent } from './designer/builder-designer.component';
 import { BuilderToolboxComponent } from './toolbox/builder-toolbox.component';
@@ -17,6 +19,9 @@ import { BuilderPropertiesTextComponent } from './properties/builder-properties-
 import { BuilderPropertiesToggleComponent } from './properties/builder-properties-toggle.component';
 import { BuilderPropertiesDropdownComponent } from './properties/builder-properties-dropdown.component';
 import { BuilderPropertiesRadioComponent } from './properties/builder-properties-radio.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,10 @@ import { BuilderPropertiesRadioComponent } from './properties/builder-properties
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatChipsModule,
+    NoopAnimationsModule
   ],
   exports: [BuilderComponent],
   providers: [],

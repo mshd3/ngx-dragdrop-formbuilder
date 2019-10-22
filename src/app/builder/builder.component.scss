@@ -1,16 +1,22 @@
 .builder-container {
     padding: 5px;
 
+    builder-toolbox {
+        min-width: 250px;
+    }
+
+    builder-designer {
+        width: 60%;
+        min-width: 500px;
+    }
+
+    builder-properties {
+        min-width: 325px;
+    }
+
     .panel {
         display: inline-block;
         margin: 5px;
-        min-width: 325px;
         vertical-align: top;
-        width: 20%;
-    }
-
-    .panel.designer {
-        min-width: 500px;
-        width: 55%;
     }
 }
